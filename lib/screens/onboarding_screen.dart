@@ -1,6 +1,5 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:erbilcafe/screens/Home_Screen.dart';
 import 'package:erbilcafe/utilities/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -51,30 +50,29 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               children: <Widget>[
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  
                   children: [
-                    
                     Container(
                         margin: EdgeInsets.only(left: 10),
                         alignment: Alignment.centerRight,
-                        
-                         
-                       child: RaisedButton(
-
+                        child: RaisedButton(
                           child: Text(
                             "Back",
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w600),
+                                fontSize: 16, fontWeight: FontWeight.w600),
                           ),
-                          onPressed:(){},
+                          onPressed: () {
+                            _pageController.previousPage(
+                              duration: Duration(milliseconds: 500),
+                              curve: Curves.ease,
+                            );
+                          },
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)),
                           color: HexColor('#7F5539'),
                           textColor: HexColor('#ddb892'),
                           padding: EdgeInsets.all(8.0),
                           splashColor: Colors.grey,
-                        )
-                        ),
+                        )),
                     Container(
                         margin: EdgeInsets.only(right: 10),
                         alignment: Alignment.centerRight,
@@ -84,9 +82,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           child: Text(
                             "Skip",
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w600),
+                                fontSize: 16, fontWeight: FontWeight.w600),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            _pageController.jumpToPage(_numPages);
+                          },
                           color: HexColor('#7F5539'),
                           textColor: HexColor('#ddb892'),
                           padding: EdgeInsets.all(8.0),
@@ -108,7 +108,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       Padding(
                         padding: EdgeInsets.all(40),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Center(
                               child: Image(
@@ -141,18 +141,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                 image: AssetImage(
                                   'assets/img/imgg.png',
                                 ),
-                                height: 300.0,
-                                width: 300.0,
+                                height: 400.0,
+                                width: 400.0,
                               ),
                             ),
                             SizedBox(height: 30.0),
                             Text(
-                              'Live your life smarter\nwith us!',
-                              style: kTitleStyle,
+                              'What is the main goal of creating that app?',
+                              style: kTitleStyle2,
                             ),
-                            SizedBox(height: 15.0),
+                            SizedBox(height: 10.0),
                             Text(
-                              'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
+                              'the goal, is to make it easier for people to choose their favorite place before they leave home, and to give a clear view of the Erbil cafeterias.',
                               style: kSubtitleStyle,
                             ),
                           ],
@@ -166,21 +166,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                             Center(
                               child: Image(
                                 image: AssetImage(
-                                  'assets/img/img3.png',
+                                  'assets/img/img2.png',
                                 ),
-                                height: 300.0,
-                                width: 300.0,
+                                height: 400.0,
+                                width: 400.0,
                               ),
                             ),
-                            SizedBox(height: 30.0),
+                            // SizedBox(height: 30.0),
                             Text(
-                              'Get a new experience\nof imagination',
-                              style: kTitleStyle,
+                              'The benefits & services are available',
+                              style: kTitleStyle3,
                             ),
-                            SizedBox(height: 15.0),
+                            SizedBox(height: 40.0),
                             Text(
-                              'Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod tempor incididunt ut labore et.',
-                              style: kSubtitleStyle,
+                              ' 1- Booking Service \n 2- Location Thier Cafe \n 3- Menu Thier Cafe \n 4- Design Thier Cafe',
+                              style: kSubtitleStyle2,
                             ),
                           ],
                         ),
@@ -272,7 +272,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: Center(
                       child: Padding(
                         padding: EdgeInsets.only(
-                          bottom: 30.0,
+                          bottom: 20.0,
                         ),
                         child: Text(
                           'Get started',
