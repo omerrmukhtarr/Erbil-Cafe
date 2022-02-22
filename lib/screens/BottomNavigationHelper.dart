@@ -1,10 +1,11 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:erbilcafe/screens/Location_Screen.dart';
 import 'package:erbilcafe/screens/Popular_Screen.dart';
 import 'package:erbilcafe/screens/Profile_Screen.dart';
 import 'package:erbilcafe/screens/Shop_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'CurvedNavigationBar.dart';
+
 
 class BottomNavigationHelper extends StatefulWidget {
   const BottomNavigationHelper({Key? key}) : super(key: key);

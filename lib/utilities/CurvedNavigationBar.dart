@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:erbilcafe/screens/nav_button.dart';
-import 'package:erbilcafe/screens/nav_custom_painter.dart';
+import 'package:erbilcafe/utilities/nav_button.dart';
+import 'package:erbilcafe/utilities/nav_custom_painter.dart';
 
 typedef _LetIndexPage = bool Function(int value);
 
