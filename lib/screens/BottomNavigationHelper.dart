@@ -6,7 +6,6 @@ import 'package:erbilcafe/screens/Shop_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-
 class BottomNavigationHelper extends StatefulWidget {
   const BottomNavigationHelper({Key? key}) : super(key: key);
 
@@ -26,25 +25,24 @@ class BottomNavigationHelperState extends State<BottomNavigationHelper> {
   Widget build(BuildContext context) {
     return Scaffold(
         bottomNavigationBar: CurvedNavigationBar(
-          color: HexColor('#7F5539'),
-          backgroundColor: HexColor('#ddb892'),
+          color: Color(0xff141921),
+          backgroundColor: HexColor('#E6CCB2'),      
           items: <Widget>[
             Icon(
               Icons.coffee,
               size: 30,
-              color: HexColor('#ddb892'),
+              color: HexColor('#E6CCB2'),
             ),
             Icon(Icons.storefront_outlined,
-                size: 30, color: HexColor('#ddb892')),
-            Icon(Icons.location_pin, size: 30, color: HexColor('#ddb892')),
-            Icon(Icons.person, size: 30, color: HexColor('#ddb892')),
+                size: 30, color: HexColor('#E6CCB2')),
+            Icon(Icons.location_pin, size: 30, color: HexColor('#E6CCB2')),
+            Icon(Icons.person, size: 30, color: HexColor('#E6CCB2')),
           ],
           onTap: (index) {
             selectedIndex = index;
             setState(() {});
           },
         ),
-        body: Screens.elementAt(selectedIndex)
-        );
+        body: Screens.elementAt(selectedIndex));
   }
 }

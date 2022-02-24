@@ -12,8 +12,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: HexColor('#ddb892'),
-       body: Text("saeed"),
+      backgroundColor: HexColor('#E6CCB2'),
+      body: Center(child: Text("saeed")),
     );
   }
 }

@@ -30,7 +30,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       height: 10.0,
       width: isActive ? 24.0 : 12.0,
       decoration: BoxDecoration(
-        color: isActive ? HexColor('#ddb892') : HexColor('#7F5539'),
+        color: isActive ? HexColor('#ddb892') : HexColor('#d17842'),
         borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
     );
@@ -42,58 +42,62 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
         child: Container(
-          decoration: BoxDecoration(color: HexColor('#212325')),
+          decoration: BoxDecoration(color: HexColor('#141921')),
           child: Padding(
             padding: EdgeInsets.only(bottom: 40, top: 40),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                        margin: EdgeInsets.only(left: 10),
-                        alignment: Alignment.centerRight,
-                        child: RaisedButton(
-                          child: Text(
-                            "Back",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w600),
+                _currentPage != _numPages - 3
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(left: 10),
+                            alignment: Alignment.centerRight,
+                            child: RaisedButton(
+                              child: Text(
+                                "Back",
+                                style: TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w600),
+                              ),
+                              onPressed: () {
+                                _pageController.previousPage(
+                                  duration: Duration(milliseconds: 500),
+                                  curve: Curves.ease,
+                                );
+                              },
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20)),
+                              color: HexColor('#d17842'),
+                              textColor: HexColor('#141921'),
+                              padding: EdgeInsets.all(8.0),
+                              splashColor: Colors.grey,
+                            ),
                           ),
-                          onPressed: () {
-                            _pageController.previousPage(
-                              duration: Duration(milliseconds: 500),
-                              curve: Curves.ease,
-                            );
-                          },
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                          color: HexColor('#7F5539'),
-                          textColor: HexColor('#ddb892'),
-                          padding: EdgeInsets.all(8.0),
-                          splashColor: Colors.grey,
-                        )),
-                    Container(
-                        margin: EdgeInsets.only(right: 10),
-                        alignment: Alignment.centerRight,
-                        child: RaisedButton(
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20)),
-                          child: Text(
-                            "Skip",
-                            style: TextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w600),
-                          ),
-                          onPressed: () {
-                            _pageController.jumpToPage(_numPages);
-                          },
-                          color: HexColor('#7F5539'),
-                          textColor: HexColor('#ddb892'),
-                          padding: EdgeInsets.all(8.0),
-                          splashColor: Colors.grey,
-                        )),
-                  ],
-                ),
+                          Container(
+                              margin: EdgeInsets.only(right: 10),
+                              alignment: Alignment.centerRight,
+                              child: RaisedButton(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                child: Text(
+                                  "Skip",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                                onPressed: () {
+                                  _pageController.jumpToPage(_numPages);
+                                },
+                                color: HexColor('#d17842'),
+                                textColor: HexColor('#141921'),
+                                padding: EdgeInsets.all(8.0),
+                                splashColor: Colors.grey,
+                              )),
+                        ],
+                      )
+                    : Text(''),
                 Container(
                   height: 700.0,
                   child: PageView(
@@ -207,7 +211,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               width: 120,
                               height: 40,
                               decoration: BoxDecoration(
-                                  color: HexColor('#7F5539'),
+                                  color: HexColor('#d17842'),
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(20))),
                               child: Row(
@@ -217,14 +221,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   Text(
                                     'Next',
                                     style: TextStyle(
-                                      color: HexColor('#ddb892'),
+                                      color: HexColor('#141921'),
                                       fontSize: 25.0,
                                     ),
                                   ),
                                   SizedBox(width: 10.0),
                                   Icon(
                                     Icons.arrow_forward,
-                                    color: HexColor('#ddb892'),
+                                    color: HexColor('#141921'),
                                     size: 25.0,
                                   ),
                                 ],
@@ -243,7 +247,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           ? Container(
               height: 80.0,
               width: Size.infinite.width,
-              color: HexColor('#7F5539'),
+              color: HexColor('#d17842'),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -257,7 +261,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         child: Text(
                           'Sign in',
                           style: TextStyle(
-                            color: HexColor('#ddb892'),
+                            color: HexColor('#141921'),
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                           ),
@@ -277,7 +281,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         child: Text(
                           'Get started',
                           style: TextStyle(
-                            color: HexColor('#ddb892'),
+                            color: HexColor('#141921'),
                             fontSize: 20.0,
                             fontWeight: FontWeight.bold,
                           ),
